@@ -5,7 +5,7 @@ import util.ListNode;
 public class SortLinkedList {
 
     public static void main(String[] args) {
-        
+
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2, l1);
         ListNode l3 = new ListNode(3, l2);
@@ -16,9 +16,9 @@ public class SortLinkedList {
         SortLinkedList sort = new SortLinkedList();
         System.out.println(sort.adjustedSort(l6, 3));
     }
-    
+
     public void sort(ListNode node) {
-        
+
     }
 
     public ListNode adjustedSort(ListNode head, int val) {
@@ -28,8 +28,6 @@ public class SortLinkedList {
         ListNode eTail = null; // equals to node tail
         ListNode lHead = null; // larger than node head
         ListNode lTail = null; // larger than node tail
-
-
 
         while (head != null) {
             System.out.println(head);
@@ -44,7 +42,7 @@ public class SortLinkedList {
                 sTail = sTail.next;
                 head = head.next;
                 sTail.next = null;
-            }else if (head.val == val) {
+            } else if (head.val == val) {
                 if (eHead == null) {
                     eHead = head;
                     eTail = head;
@@ -74,7 +72,7 @@ public class SortLinkedList {
 
         if (sHead != null)
             sTail.next = eHead;
-        else 
+        else
             sHead = eHead;
 
         if (eTail != null)

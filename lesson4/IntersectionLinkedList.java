@@ -3,9 +3,9 @@ package lesson4;
 import util.ListNode;
 
 public class IntersectionLinkedList {
-    
+
     public static void main(String[] args) {
-        
+
         ListNode l1 = new ListNode(6);
         ListNode l2 = new ListNode(5, l1);
         ListNode l3 = new ListNode(4, l2);
@@ -16,7 +16,7 @@ public class IntersectionLinkedList {
 
         ListNode node = containsCircle(l6);
         System.out.println(node.val);
-    } 
+    }
 
     public static ListNode hasIntersection(ListNode h1, ListNode h2) {
         ListNode c1 = containsCircle(h1);
@@ -34,7 +34,7 @@ public class IntersectionLinkedList {
                     l2 = l1 ^ l2;
                     l1 = l1 ^ l2;
                 }
-                for (int i = 0; i < l1-l2; i++) {
+                for (int i = 0; i < l1 - l2; i++) {
                     n1 = n1.next;
                 }
                 while (n1 != n2) {
@@ -43,7 +43,7 @@ public class IntersectionLinkedList {
                 }
                 return n1;
             }
-        } else if ( c1 != null && c2 != null) {
+        } else if (c1 != null && c2 != null) {
             if (c1 == c2) {
                 int l1 = getLength(h1, c1);
                 int l2 = getLength(h2, c2);
@@ -54,7 +54,7 @@ public class IntersectionLinkedList {
                     l2 = l1 ^ l2;
                     l1 = l1 ^ l2;
                 }
-                for (int i = 0; i < l1-l2; i++) {
+                for (int i = 0; i < l1 - l2; i++) {
                     n1 = n1.next;
                 }
                 while (n1 != n2) {
@@ -63,18 +63,19 @@ public class IntersectionLinkedList {
                 }
                 return n1;
             } else {
-                
+
             }
         }
         return null;
     }
 
     public static ListNode containsCircle(ListNode head) {
-        // if a LinkedList contains circle, then the circle must be at the end of the list
+        // if a LinkedList contains circle, then the circle must be at the end of the
+        // list
 
         ListNode slow = head;
         ListNode fast = head;
-        while(fast.next != null && fast.next.next != null) {
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast) {
@@ -107,7 +108,7 @@ public class IntersectionLinkedList {
         int i = 0;
         ListNode node = head;
         while (node != tail) {
-            i ++;
+            i++;
             node = node.next;
         }
         return i;

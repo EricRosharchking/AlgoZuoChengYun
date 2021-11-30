@@ -3,7 +3,6 @@ package lesson4;
 import util.RandLinkedListNode;
 
 public class CopyRandLinkedList {
-    
 
     public static void main(String[] args) {
         CopyRandLinkedList cp = new CopyRandLinkedList();
@@ -25,17 +24,16 @@ public class CopyRandLinkedList {
         System.out.println(l5);
     }
 
-
     public RandLinkedListNode copy(RandLinkedListNode head) {
         RandLinkedListNode newHead = head;
 
-        while(head != null) {
+        while (head != null) {
             RandLinkedListNode node = head.next;
             head.next = new RandLinkedListNode(-head.val, node);
             head = node;
         }
         head = newHead;
-        while(head != null) {
+        while (head != null) {
             if (head.rand != null)
                 head.next.rand = head.rand.next;
             head = head.next.next;
@@ -45,7 +43,7 @@ public class CopyRandLinkedList {
 
     public RandLinkedListNode extract(RandLinkedListNode newHead) {
         RandLinkedListNode copy = newHead.next;
-        while(newHead != null && newHead.next.next != null) {
+        while (newHead != null && newHead.next.next != null) {
             RandLinkedListNode newNext = newHead.next.next;
             newHead.next.next = newNext.next;
             newHead.next = newNext;

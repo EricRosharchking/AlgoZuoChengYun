@@ -1,6 +1,7 @@
 package lesson6;
 
 public class GraphGenerator {
+    
     public static Graph createGraph(Integer[][] matrix) { // N 个数组 [from, weight, to] 来表示所有的边
         Graph graph = new Graph();
         for (int i = 0; i < matrix.length; i ++) {

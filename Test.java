@@ -1,7 +1,10 @@
 import java.util.Arrays;
 
 import lesson1.LocalMinimum;
+import lesson1.OneTimeOccurrance;
+import lesson2.QuickSort3;
 import lesson2.SmallSum;
+import lesson3.HeapSort;
 import lesson3.RadixSort;
 import lesson5.BinaryTree;
 import lesson5.IsTree;
@@ -61,9 +64,16 @@ public class Test {
         // IsTree.isBSTReccursive(n12).isBST);
         // System.out.println(IsTree.isBSTReccursive(n14).isBST);
         // System.out.println(IsTree.isCBTNonReccursive(n11));
-        Integer[][] graph = testMatrix();
-        System.out.println("----------------------------");
-        populateMatrixGraph(graph);
+        // Integer[][] graph = testMatrix();
+        // System.out.println("----------------------------");
+        // populateMatrixGraph(graph);
+
+        int[] arr = {1,2,3,1,2,4};
+        // int[] res = OneTimeOccurrance.getNumbers(arr);
+        // System.out.println(res[0] + "," + res[1]);
+
+        RadixSort.radixSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
     public static int divide(int i, int j) {

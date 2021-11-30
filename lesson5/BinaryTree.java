@@ -42,15 +42,13 @@ public class BinaryTree {
 
     public static int maxWidthAdjusted(BinaryTreeNode head) {
         /**
-         * based on BFS for a tree, if the last node of the current level 
-         * has been dequeued, then all the nodes from the next level will
-         * be in the queue.
-         * Hence, if the the dequeued node's right node is the last node
-         * of the next level, the the dequeued node will be the last node
-         * if its own level (current level) -> going to the next level
-         * Two pointers: currNode and nextEndNode, if currNode == nextEndNode
-         * then nextEndNode assigned to the last Node of the queue, count
-        */
+         * based on BFS for a tree, if the last node of the current level has been
+         * dequeued, then all the nodes from the next level will be in the queue. Hence,
+         * if the the dequeued node's right node is the last node of the next level, the
+         * the dequeued node will be the last node if its own level (current level) ->
+         * going to the next level Two pointers: currNode and nextEndNode, if currNode
+         * == nextEndNode then nextEndNode assigned to the last Node of the queue, count
+         */
         int max = 0;
         int currLevelNodes = 0;
         Queue<BinaryTreeNode> queue = new LinkedList<>();
@@ -61,9 +59,9 @@ public class BinaryTree {
             currNode = queue.poll();
             if (currNode.left != null)
                 queue.add(currNode.left);
-            if (currNode.right != null) 
+            if (currNode.right != null)
                 queue.add(currNode.right);
-            
+
             currLevelNodes++;
             if (currNode == nextEndNode) {
                 max = Math.max(max, currLevelNodes);
@@ -71,7 +69,7 @@ public class BinaryTree {
                 if (queue.isEmpty()) {
                     nextEndNode = null;
                 } else {
-                    nextEndNode = ((LinkedList<BinaryTreeNode>)queue).getLast();
+                    nextEndNode = ((LinkedList<BinaryTreeNode>) queue).getLast();
                 }
             }
         }

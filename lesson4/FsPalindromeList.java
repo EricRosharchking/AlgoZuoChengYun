@@ -7,7 +7,7 @@ public class FsPalindromeList {
     // S(low Pointer) moves 1 nodes every time
 
     public static void main(String[] args) {
-        
+
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2, l1);
         ListNode l3 = new ListNode(3, l2);
@@ -54,7 +54,7 @@ public class FsPalindromeList {
         ListNode mid = new ReverseLinkedList().reverse(tail);
         if (node != mid)
             node.next = mid;
-        else 
+        else
             node = mid;
         return head;
     }

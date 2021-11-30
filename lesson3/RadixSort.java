@@ -1,7 +1,5 @@
 package lesson3;
 
-import java.util.Arrays;
-
 public class RadixSort {
 
     public static void radixSort(int[] arr) {
@@ -91,7 +89,7 @@ public class RadixSort {
             int original = 0;
             for (int d = 0; d < radix; d++) { // loop all buckets and put the elements back to arr,
                                               // retain the bucket sequence and original adding sequence
-                
+
                 for (int num : buckets[d]) {
                     if (num != 0) {
                         // System.out.println(num);
@@ -99,7 +97,7 @@ public class RadixSort {
                     }
                 }
             }
-            //System.out.println(Arrays.toString(arr));
+            // System.out.println(Arrays.toString(arr));
 
             buckets = new int[10][10];
         }

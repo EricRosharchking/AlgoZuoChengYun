@@ -3,7 +3,7 @@ package lesson4;
 import util.ListNode;
 
 public class ReverseLinkedList {
-    
+
     public static void main(String[] args) {
         ReverseLinkedList re = new ReverseLinkedList();
 
@@ -17,7 +17,7 @@ public class ReverseLinkedList {
         System.out.println(re.reverse(l6));
     }
 
-    public ListNode reverse(ListNode head) {    // entry point: starting with just a head node
+    public ListNode reverse(ListNode head) { // entry point: starting with just a head node
         if (head.next == null) {
             return head;
         }
@@ -28,7 +28,7 @@ public class ReverseLinkedList {
     }
 
     public ListNode reverse(ListNode head, ListNode node) { // base case: one new head node, and one old head node
-        if (node.next == null) {    // end point: old head has reached its end 
+        if (node.next == null) { // end point: old head has reached its end
             node.next = head;
             return node;
         }
