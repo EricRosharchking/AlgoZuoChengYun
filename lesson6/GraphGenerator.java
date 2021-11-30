@@ -24,4 +24,20 @@ public class GraphGenerator {
         }
         return graph;
     }
+
+    public static Integer[][] createMatrix(Integer[][] matrix, int size) {
+        Integer[][] res = new Integer[size][size];
+        for (Integer[] row: matrix) {
+            res[row[0]][row[2]] = row[1];
+        }
+        for (int i = 0; i < size; i++) {
+            res[i][i] = 0;
+            for (int j = 0; j< size; j++) {
+                if (res[i][j] != null) {
+                    res[j][i] = res[i][j];
+                }
+            }
+        }
+        return res;
+    }
 }
