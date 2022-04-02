@@ -9,7 +9,6 @@ public class ActivityPlan {
 
         @Override
         public int compare(Activity o1, Activity o2) {
-            // TODO Auto-generated method stub
             return o1.end - o2.end;
         }
 
