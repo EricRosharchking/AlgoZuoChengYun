@@ -10,7 +10,6 @@ public class DoublyLinkedListNode extends ListNode {
 
     public DoublyLinkedListNode(int val) {
         super(val);
-        //TODO Auto-generated constructor stub
     }
     
     public DoublyLinkedListNode(int val, DoublyLinkedListNode next, DoublyLinkedListNode previous) {

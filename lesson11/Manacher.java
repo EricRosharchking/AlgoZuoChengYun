@@ -1,7 +1,5 @@
 package lesson11;
 
-import java.util.Arrays;
-
 public class Manacher {
 
     public static void main(String[] args) {

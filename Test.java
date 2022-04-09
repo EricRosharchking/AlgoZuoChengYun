@@ -1,15 +1,7 @@
 import java.util.Arrays;
 
-import lesson1.LocalMinimum;
-import lesson1.OneTimeOccurrance;
-import lesson2.QuickSort3;
-import lesson2.SmallSum;
-import lesson3.HeapSort;
 import lesson3.RadixSort;
-import lesson5.BinaryTree;
-import lesson5.IsTree;
 import lesson6.GraphGenerator;
-import util.BinaryTreeNode;
 
 public class Test {
 

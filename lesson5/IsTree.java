@@ -37,6 +37,7 @@ public class IsTree {
         return true;
     }
 
+    //In-Order Traversed value is always increasing
     public static boolean isBSTNonReccursive(BinaryTreeNode head) { // is binary search tree
         if (head == null) {
             return true;
