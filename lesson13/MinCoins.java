@@ -2,7 +2,7 @@ package lesson13;
 
 import java.util.Arrays;
 
-import util.LessonUtil;
+import util.ArrayUtil;
 
 public class MinCoins {
 
@@ -91,7 +91,7 @@ public class MinCoins {
     }
 
     public static void main(String[] args) {
-        int[] arr = LessonUtil.generatePositiveIntArray(10, 10);
+        int[] arr = ArrayUtil.generatePositiveIntArray(10, 10);
         System.out.println(Arrays.toString(arr));
         System.out.println(min1(arr, 10));
     }
