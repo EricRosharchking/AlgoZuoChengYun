@@ -32,41 +32,17 @@ public class RBTNode {
                 left = left.insert(newValue);
             } else {
                 left = new RBTNode(this, newValue);
-                this.adjust(left);
             }
+            return left;
         } else if (newValue > value) {
             if (right != null) {
                 right = right.insert(newValue);
             } else {
                 right = new RBTNode(this, newValue);
-                this.adjust(right);
             }
+            return right;
         }
         return this;
-    }
-
-
-    // return the root
-    public RBTNode adjust(RBTNode node) {
-        if (node.parent != null) {
-            if (this.color == Color.BLACK) {
-                return this;
-            } else {
-                if (this.left == node) {
-                    right.color = Color.BLACK;
-                } else {
-                    left.color = Color.BLACK;
-                }
-                color = Color.BLACK;
-                if (parent != null) {
-                    parent.color = Color.RED;
-                }
-
-            }
-
-            return node.parent;
-        }
-        return node;
     }
 
     @Override
@@ -78,6 +54,10 @@ public class RBTNode {
                 ", value='" + value + "'" +
                 ", color='" + color + "'" +
                 "}";
+    }
+
+    public void flipColor() {
+        color = color == Color.RED ? Color.BLACK : Color.RED;
     }
 
 }
