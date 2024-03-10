@@ -140,6 +140,14 @@ public class BinaryTree {
         System.out.println();
     }
 
+    public static void addLeftTree(Stack<BinaryTreeNode> stack, BinaryTreeNode head) {
+        BinaryTreeNode left = head;
+        while (left != null) {
+            stack.add(left);
+            left = left.left;
+        }
+    }
+
     public static void bfs(BinaryTreeNode head) {
         if (head == null) {
             return;
@@ -155,14 +163,6 @@ public class BinaryTree {
                 queue.add(head.right);
         }
         System.out.println();
-    }
-
-    public static void addLeftTree(Stack<BinaryTreeNode> stack, BinaryTreeNode head) {
-        BinaryTreeNode left = head;
-        while (left != null) {
-            stack.add(left);
-            left = left.left;
-        }
     }
 
     public static void reccursiveTraverse(BinaryTreeNode head) {

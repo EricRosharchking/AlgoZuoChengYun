@@ -60,12 +60,38 @@ public class Test {
         // System.out.println("----------------------------");
         // populateMatrixGraph(graph);
 
-        int[] arr = {1,2,3,1,2,4};
+        // int[] arr = {1,2,3,1,2,4};
         // int[] res = OneTimeOccurrance.getNumbers(arr);
         // System.out.println(res[0] + "," + res[1]);
 
-        RadixSort.radixSort(arr);
+        String s = "";
+        System.out.println(longestValidParentheses(s));
+    }
+
+    public static int longestValidParentheses(String s) {
+        int[] arr = new int[s.length()];
+        int res = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (s.charAt(i) == ')') {
+                if (s.charAt(i - 1) == '(') {
+                    arr[i] += 2;
+                    if (i >= 2) {
+                        arr[i] += arr[i - 2];
+                    }
+                } else {
+                    int x = i - arr[i - 1] - 1;
+                    if (arr[i - 1] > 0 && x >= 0 && s.charAt(x) == '(') {
+                        arr[i] = 2 + arr[i - 1];
+                    }
+                    while (i - arr[i] > 0 && arr[i-arr[i]] > 0) {
+                        arr[i] += arr[i-arr[i]];
+                    }
+                }
+            }
+            res = Math.max(res, arr[i]);
+        }
         System.out.println(Arrays.toString(arr));
+        return res;
     }
 
     public static int divide(int i, int j) {
@@ -96,13 +122,13 @@ public class Test {
         }
 
         for (int i = 0; i < graph.length; i++) {
-            for (int j = 0; j< graph.length; j++) {
+            for (int j = 0; j < graph.length; j++) {
                 if (graph[i][j] != null) {
                     graph[j][i] = graph[i][j];
                 }
             }
         }
-        for(Integer[] row: graph) {
+        for (Integer[] row : graph) {
             System.out.println(Arrays.toString(row));
         }
     }

@@ -1,6 +1,14 @@
 package lesson2;
 
+import java.util.Arrays;
+
 public class QuickSort3 {
+
+    public static void main(String[] args) {
+        int[] arr = {5,2,3,1};
+        sort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
 
     public static void sort(int[] arr) {
         if (arr == null || arr.length < 2) {

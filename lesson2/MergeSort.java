@@ -13,7 +13,7 @@ public class MergeSort {
             return;
         }
 
-        int mid = L + (R - L) >> 2;
+        int mid = L + (R - L) >> 1;
         sort(arr, L, mid);
         sort(arr, mid+1, R);
         merge(arr, L, mid, R);
@@ -23,7 +23,7 @@ public class MergeSort {
         int[] help = new int[R - L + 1];
         int i = 0;
         int p1 = L;
-        int p2 = R;
+        int p2 = M;
 
         while (p1 <= M && p2 <= R) {
             help[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];

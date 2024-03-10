@@ -12,7 +12,10 @@ public class EvenTimesOddTimes {
 
      public static void main(String[] args) {
 
-
+        int[] arr = {1,2,3,1,2,3,4};
+        printOddTimesNum1(arr);
+        System.out.println("=========");
+        printOddTimesNum2(arr);
      }
 
      public static void printOddTimesNum1(int[] arr) {
@@ -39,7 +42,7 @@ public class EvenTimesOddTimes {
         int onlyOne = 0; // eor'
 
         for (int i: arr) {
-            if ((i & rightOne) == 1) { //最右位为1的数
+            if ((i & rightOne) == rightOne) { //最右位为1的数
                 onlyOne ^= i;
             }
         }
